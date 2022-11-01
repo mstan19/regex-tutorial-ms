@@ -38,26 +38,32 @@ Extension Component ```([a-z]{2,6})```: In this condition, only 2 to 6 lower cas
 
 Anchors informs us the start and end of the matching process. Anchors do not actually matches character. The ```^``` informs us the start of the  position in the string; this is before the first character. While ```$``` is the position after the last character in the string. For instance, ```stan1@catmail.com```, the ```^``` will be before the ```s``` while ```$``` is after ```m```.
 
-### Quantifiers
+<!-- ### Quantifiers
 
-Quantifier sets the number of characters to match. In our regex email validation function: ```/^([a-zA-Z0-9_\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,6})$/```, the 2 and 6 in```{2,6}``` are the quantifiers.
+Quantifier sets the number of characters to match. In our regex email validation function: ```/^([a-zA-Z0-9_\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,6})$/```, the 2 and 6 in```{2,6}``` are the quantifiers. -->
 
 ### Grouping Constructs
+
+
+
+Capturing and non-capturing are two types of grouping constructs.
+
+Disclaimer:  We will not be going over capturing and non-capturing groups in this gist.
 
 
 ### Bracket Expressions
 
 Bracket expression (also known as Positive character group) indicates the range of characters to match. For example, ```[mc]stan```, meaning we are matching any letters that start with ```m``` or ```c``` but end with ```stan```. To include a range you can use a dash. For instance, ```[a-zA-Z]stan```, we can look for any lower or upper case letter that ends with ```stan```. 
 
-### Character Classes
+<!-- ### Character Classes -->
 
 ### The OR Operator
 
 Although we didn't use the OR operator, ```|```, in our email example, we will go over it anyway. For example, ```(m|M)aze```, we are looking for either a lower case or upper case 'm' that has ```aze``` after it. It is importnat to note that regex is case sensitive, which is why we have to include both lower and upper case range. Also, ```(m|M)aze``` and ```(mM)aze``` will return the same because in the latter example the or is implied.
 
-### Flags
+<!-- ### Flags -->
 
-### Character Escapes
+<!-- ### Character Escapes -->
 
 ## Author
 
