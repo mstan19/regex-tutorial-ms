@@ -55,7 +55,17 @@ Disclaimer: Capturing and non-capturing are two types of grouping constructs. We
 
 Bracket expression (also known as Positive character group) indicates the range of characters to match. For example, ```[mc]stan```, meaning we are matching any letters that start with ```m``` or ```c``` but end with ```stan```. To include a range you can use a dash. For instance, ```[a-zA-Z]stan```, we can look for any lower or upper case letter that ends with ```stan```. 
 
-<!-- ### Character Classes -->
+### Character Classes
+
+Examples of character classes are ```.```, ```\d```, and ```\w```.
+
+For ```.```, see character escapes.
+
+The ````\w``` matches any word character
+
+The ```\s``` matches any white spaces between words.
+
+Note: Both ````\w``` and ```\s``` are not used in email validation.
 
 ### The OR Operator
 
