@@ -38,17 +38,15 @@ Extension Component ```([a-z]{2,6})```: In this condition, only 2 to 6 lower cas
 
 Anchors informs us the start and end of the matching process. Anchors do not actually matches character. The ```^``` informs us the start of the  position in the string; this is before the first character. While ```$``` is the position after the last character in the string. For instance, ```stan1@catmail.com```, the ```^``` will be before the ```s``` while ```$``` is after ```m```.
 
-<!-- ### Quantifiers
+### Quantifiers
 
-Quantifier sets the number of characters to match. In our regex email validation function: ```/^([a-zA-Z0-9_\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,6})$/```, the 2 and 6 in```{2,6}``` are the quantifiers. -->
+Quantifier sets the number of characters in your string. In our regex email validation function: ```/^([a-zA-Z0-9_\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,6})$/```, the 2 and 6 in```{2,6}``` are the quantifiers, which mean for our extension can only be 2 to 6 letters long (specifically lower case letters)
 
 ### Grouping Constructs
 
+For the email validation function, we have groups, which are separted by ```()```. Once the username component is valid(meaning meets the stated condition), then regex can move on to the next component/match which is domain. For example, the username component is defined as ```([a-zA-Z0-9_\.-]+)```. If the user inputted ``` maze123``` as a username, it's valid and it will go on to the domain component. Remember, after th rusername the user needs to input ```@``` after the username or else it would be invalid.
 
-
-Capturing and non-capturing are two types of grouping constructs.
-
-Disclaimer:  We will not be going over capturing and non-capturing groups in this gist.
+Disclaimer: Capturing and non-capturing are two types of grouping constructs. We will not be going over capturing and non-capturing groups in this gist.
 
 
 ### Bracket Expressions
