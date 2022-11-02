@@ -71,7 +71,9 @@ Note: Both ````\w``` and ```\s``` are not used in email validation.
 
 Although we didn't use the OR operator, ```|```, in our email example, we will go over it anyway. For example, ```(m|M)aze```, we are looking for either a lower case or upper case 'm' that has ```aze``` after it. It is importnat to note that regex is case sensitive, which is why we have to include both lower and upper case range. Also, ```(m|M)aze``` and ```(mM)aze``` will return the same because in the latter example the or is implied.
 
-<!-- ### Flags -->
+### Flags
+
+This concept is not used in email validations.
 
 ### Character Escapes
 
