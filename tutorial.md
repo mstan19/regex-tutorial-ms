@@ -40,7 +40,7 @@ Anchors informs us the start and end of the matching process. Anchors do not act
 
 ### Quantifiers
 
-Quantifier sets the number of characters in your string. In our regex email validation function: ```/^([a-zA-Z0-9_\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,6})$/```, notice in both username and doamin component have ``` +```. The ``` +``` means there is no limit on how characters can be inputted for the user component. This is added since users can have a short or long username and domain.
+Quantifier sets the number of characters in your string. In our regex email validation function: ```/^([a-zA-Z0-9_\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,6})$/```, notice in both username and domain component have ``` +```. The ``` +``` means there is no limit on how characters can be inputted for the user component. This is added since users can have a short or long username and domain.
 
 In our regex, we have another set of quantifiers. In our extension component, the 2 and 6 in ```{2,6}``` are the quantifiers, which means user can only input only be 2 to 6 letters long (specifically lower case letters) in their extension component.
 
