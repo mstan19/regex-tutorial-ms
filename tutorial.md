@@ -4,7 +4,7 @@ Regular expression (also known as regex) is a sequence of characters that specif
 
 ## Summary
 
-As mention, this tutorial will go over how to use regex when validating user's email address in JS. For example, a typical email validation will look like this: ```/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/```. This snippet of code will force the user to input an email that meet certain conditions. By the end of this tutorial, you will be able to understand this snippet of code.
+As mentioned, this tutorial will go over how to use regex when validating user's email address in JS. For example, a typical email validation will look like this: ```/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/```. This snippet of code will force the user to input an email that meet certain conditions. By the end of this tutorial, you will be able to understand this snippet of code.
 
 
 ## Table of Contents
@@ -29,7 +29,7 @@ Username Component ```([a-zA-Z0-9_\.-]+)```: This component can have any letters
 
 Domain Component ```([a-zA-Z0-9-]+)```: This component can only have any letters, numbers, and/or hyphens. For example, ```catmail``` is valid domain but ```cat.mail``` is not valid domain since the condition did not include ```\.```. See username component for the ``` +``` explanation. 
 
-Dot: Dots can be used in the username but they are written as ```\.``` since ```.``` means it will matche a single character, without caring what character it actaully is, but ```\.``` means user can use the literal dot.
+Dot: Dots can be used in the username but they are written as ```\.``` since ```.``` means it will matche a single character, without caring what character it actually is, but ```\.``` means user can use the literal dot.
 
 Extension Component ```([a-z]{2,6})```: In this condition, only 2 to 6 lower case letters can be vaild for the exntion component. For example, ```com``` is valid but ```c``` is not valid since this condition requires at least 2 letters in order to be valid. 
                             
@@ -42,11 +42,11 @@ Anchors informs us the start and end of the matching process. Anchors do not act
 
 Quantifier sets the number of characters in your string. In our regex email validation function: ```/^([a-zA-Z0-9_\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,6})$/```, notice in both username and doamin component have ``` +```. The ``` +``` means there is no limit on how characters can be inputted for the user component. This is added since users can have a short or long username and domain.
 
-In our regex, we have another set of quantifiers. In our extension componennt, the 2 and 6 in ```{2,6}``` are the quantifiers, which means user can only input only be 2 to 6 letters long (specifically lower case letters) in their extension component.
+In our regex, we have another set of quantifiers. In our extension component, the 2 and 6 in ```{2,6}``` are the quantifiers, which means user can only input only be 2 to 6 letters long (specifically lower case letters) in their extension component.
 
 ### Grouping Constructs
 
-For the email validation function, we have groups, which are separted by ```()```. Once the username component is valid(meaning meets the stated condition), then regex can move on to the next component/match which is domain. For example, the username component is defined as ```([a-zA-Z0-9_\.-]+)```. If the user inputted ``` maze123``` as a username, it's valid and it will go on to the domain component. Remember, after th rusername the user needs to input ```@``` after the username or else it would be invalid.
+For the email validation function, we have groups, which are separted by ```()```. Once the username component is valid (meaning it meets the stated condition), then regex can move on to the next component/match which is domain. For example, the username component is defined as ```([a-zA-Z0-9_\.-]+)```. If the user inputted ``` maze123``` as a username, it's valid and it will go on to the domain component. Remember, user needs to input ```@``` after the username or else it would be invalid.
 
 Disclaimer: Capturing and non-capturing are two types of grouping constructs. We will not be going over capturing and non-capturing groups in this gist.
 
@@ -63,7 +63,9 @@ Although we didn't use the OR operator, ```|```, in our email example, we will g
 
 <!-- ### Flags -->
 
-<!-- ### Character Escapes -->
+### Character Escapes
+
+Using character escapes indicates that regex should be looking for that specific special character. For instance, dots can be used in the username but they are written as ```\.``` since ```.``` means it will match a single character, without caring what character it actually is, but ```\.``` means user can use the literal dot. Let's use an example of the latter meaning. This example ```.zae``` translates find any character that ends with 'aze', so both ```maze``` and ```daze``` are valid. In the email example, the dot is the escaped character; therefore, it needs the backslash in order to be read as a dot.
 
 ## Author
 
