@@ -25,7 +25,7 @@ When building an email validation function, there are three components to consid
 
 Username Component ```([a-zA-Z0-9_\.-]+)```: This component can have any letters, numbers, dot, and/or hyphens. For instance, ```mstan1``` is a valid username, but ```m$tan1``` is not valid since special characters is not one of the conditions specified in username component. It's worth mentioning that the user does not have to use letters, numbers, dot, and hyphens. The input would still be valid is the user only inputted numbers and letters as shown in the example. The ``` +``` means there is no limit on how characters can be inputted for the user component. See Dot ```\.``` for explanation.
 
-@: The user must include ```@``` in order to consider a valid email.
+@: The user must include ```@``` in order to be consider a valid email.
 
 Domain Component ```([a-zA-Z0-9-]+)```: This component can only have any letters, numbers, and/or hyphens. For example, ```catmail``` is valid domain but ```cat.mail``` is not valid domain since the condition did not include ```\.```. See username component for the ``` +``` explanation. 
 
@@ -40,7 +40,9 @@ Anchors informs us the start and end of the matching process. Anchors do not act
 
 ### Quantifiers
 
-Quantifier sets the number of characters in your string. In our regex email validation function: ```/^([a-zA-Z0-9_\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,6})$/```, the 2 and 6 in```{2,6}``` are the quantifiers, which mean for our extension can only be 2 to 6 letters long (specifically lower case letters)
+Quantifier sets the number of characters in your string. In our regex email validation function: ```/^([a-zA-Z0-9_\.-]+)@([a-zA-Z0-9-]+)\.([a-z]{2,6})$/```, notice in both username and doamin component have ``` +```. The ``` +``` means there is no limit on how characters can be inputted for the user component. This is added since users can have a short or long username and domain.
+
+In our regex, we have another set of quantifiers. In our extension componennt, the 2 and 6 in ```{2,6}``` are the quantifiers, which means user can only input only be 2 to 6 letters long (specifically lower case letters) in their extension component.
 
 ### Grouping Constructs
 
